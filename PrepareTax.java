@@ -1,6 +1,53 @@
-import java.util.*;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+
+/**
+ *
+ * @author jjone
+ */
+import java.util.Scanner;
 
 public class PrepareTax {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String ssn = getValidSSN(scanner);
+
+        System.out.print("Enter your last name: ");
+
+        String last = scanner.nextLine();
+
+        System.out.print("Enter your first name: ");
+
+        String first = scanner.nextLine();
+
+        System.out.print("Enter your address: ");
+
+        String address = scanner.nextLine();
+
+        System.out.print("Enter your city: ");
+
+        String city = scanner.nextLine();
+
+        System.out.print("Enter your state: ");
+
+        String state = scanner.nextLine();
+
+        String zip = getValidZip(scanner);
+
+        double income = getValidAnnualIncome(scanner);
+
+        char status = getValidMaritalStatus(scanner);
+
+        // creating a TaxReturn object, displaying report
+
+        TaxReturn taxReturn = new TaxReturn(ssn, last, first, address, city, state, zip, income, status);
+
+        taxReturn.display();
+    }
     
     static String getValidSSN(Scanner scanner){
         System.out.println("Enter your social security number: ");
@@ -87,6 +134,5 @@ public class PrepareTax {
             return getValidAnnualIncome(scanner);
         }
     }
-    
     
 }
