@@ -1,7 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class TaxReturn {
     
+    //variables
     private String ssn;
     private String lastName;
     private String firstName;
@@ -12,6 +13,8 @@ public class TaxReturn {
     private double income;
     private char status;
     private double tax;
+    
+    //Constant Variables
     private final double LOWINCOME = 20000;
     private final double HIGHINCOME = 50000;
     private final double SINGLELOW = 0.15;
@@ -21,7 +24,8 @@ public class TaxReturn {
     private final double MARRIEDMED = 0.20;
     private final double MARRIEDHIGH = 0.28;
     
-    public TaxReturn(String ssn, String lastName, String firstName, String address, String city, String state, String zipCode, double income, char status){
+    //Constructor
+    public TaxReturn(String ssn, String lastName, String firstName, String address, String city, String state, String zipCode, double income, char status) {
         this.ssn = ssn;
         this.lastName = lastName;
         this.firstName = firstName;
